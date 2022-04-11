@@ -1,0 +1,11 @@
+@import "~/.cache/wal/colors-rofi-dark"
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+#window {
+    border: 2px solid;
+    border-color: @boder-color;
+}

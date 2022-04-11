@@ -1,0 +1,38 @@
+[General]
+Name: -+A2-5 - SCircWCH
+Author: Various Artists 
+CursorRotate: 0
+CursorExpand: 0
+CursorCentre: 1
+HitCircleOverlayAboveNumer: 1
+SliderStyle: 2
+Version: latest
+AllowSliderBallTint: 1
+AnimationFramerate: 12
+
+[Colours]
+Combo1: {color1.rgb}
+Combo2: {color2.rgb}
+Combo3: {color3.rgb}
+Combo4: {color4.rgb}
+Combo5: {color5.rgb}
+Combo6: {color6.rgb}
+Combo7: {color7.rgb}
+
+MenuGlow: 250,140,220
+
+SliderBorder: 198, 168, 238
+SliderTrackOverride: 0,0,0
+/SliderTrackOverride: 3, 0, 5
+SpinnerApproachCircle: 255,255,255
+SongSelectActiveText: 0,0,0
+SongSelectInactiveText: 255,255,255
+
+[Fonts]
+HitCirclePrefix: default
+HitCircleOverlap: 150
+ScorePrefix: score
+
+
+
+
