@@ -233,8 +233,6 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-
 exec_always --no-startup-id xrdb ~/.Xresources
 exec_always --no-startup-id wal -R
-
 exec_always --no-startup-id for id in $(xinput list | grep "pointer" | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop $id 'libinput Accel Profile Enabled' 0, 1; done
