@@ -4,12 +4,11 @@
 echo "Installing dotfiles..."
 #############################
 
-# stackoverflow.com/questions/59895
-DOTS=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+DOTS=$( cd -- "$( dirname -- "${BASH_SOURCE[1]}" )" &> /dev/null && pwd )
 
-##########################################
-echo "Installing ~/.config configurations"
-##########################################
+###############################################
+echo -e "\nInstalling ~/.config configurations"
+###############################################
 
 # create directories first
 for config in $(ls $DOTS/config); do
@@ -49,15 +48,9 @@ for config in $(ls $DOTS/config); do
     fi
 done
 
-##########################################
-echo "Installing home user configurations"
-##########################################
-
-
-
-###########################################
-echo "Installing other user configurations"
-###########################################
+################################################
+echo -e "\nInstalling other user configurations"
+################################################
 
 for other in $(ls $DOTS/other); do
     if [[ -f $DOTS/other/$other/setup.sh ]]; then
@@ -65,12 +58,18 @@ for other in $(ls $DOTS/other); do
     fi
 done
 
-#######################################
-echo "Installing system configurations"
-#######################################
+############################################
+echo -e "\nInstalling system configurations"
+############################################
 
+for system in $(ls $DOTS/system); do
+    if [[ -f $DOTS/system/$system/setup.sh ]]; then
+        $DOTS/system/$system/setup.sh
+    fi
+done
 
+#################
+echo -e "\nDone."
+#################
 
-#####################################################################
-echo "Done. You may need to run wal for some configurations to work."
-#####################################################################
+echo "[DOTS] you may need to run wal for some configurations to work"

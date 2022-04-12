@@ -1,0 +1,9 @@
+set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+set autoindent
+set colorcolumn=81
+set number
+set wildmenu
+set ignorecase
+set scrolloff=5
+set title
+syntax on
