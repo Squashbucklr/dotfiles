@@ -1,4 +1,21 @@
 # ============================
+# ========== Usage  ==========
+# ============================
+
+enable_audio_bell no
+
+# =============================
+# ========== Visual  ==========
+# =============================
+
+font_family      DejaVu Sans Mono
+bold_font        DejaVu Sans Mono Bold
+italic_font      DejaVu Sans Mono Oblique
+bold_italic_font DejaVu Sans Mono Bold Oblique
+
+font_size 11
+
+# ============================
 # ========== Colors ==========
 # ============================
 
@@ -36,7 +53,3 @@ active_tab_font_style   normal
 
 inactive_tab_foreground {foreground}
 inactive_tab_background {background}
-
-# vim:ft=conf
-
-enable_audio_bell no
