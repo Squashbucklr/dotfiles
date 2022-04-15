@@ -58,16 +58,6 @@ for other in $(ls $DOTS/other); do
     fi
 done
 
-############################################
-echo -e "\nInstalling system configurations"
-############################################
-
-for system in $(ls $DOTS/system); do
-    if [[ -f $DOTS/system/$system/setup.sh ]]; then
-        $DOTS/system/$system/setup.sh
-    fi
-done
-
 #################
 echo -e "\nDone."
 #################
