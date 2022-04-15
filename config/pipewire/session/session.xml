@@ -1,0 +1,179 @@
+<!DOCTYPE qjackctlSession>
+<session name="session">
+ <client name="LifeCam HD-3000 Mono">
+  <port type="out" name="capture_MONO"/>
+ </client>
+ <client name="Starship/Matisse HD Audio Controller Analog Stereo">
+  <port type="in" name="playback_FL">
+   <connect port="monitor_FL" client="Master Audio/Sink sink Monitor"/>
+  </port>
+  <port type="in" name="playback_FR">
+   <connect port="monitor_FR" client="Master Audio/Sink sink Monitor"/>
+  </port>
+ </client>
+ <client name="VoiceChat Audio/Sink sink Monitor">
+  <port type="out" name="monitor_FL">
+   <connect port="playback_FL" client="Master Audio/Sink sink"/>
+  </port>
+  <port type="out" name="monitor_FR">
+   <connect port="playback_FR" client="Master Audio/Sink sink"/>
+  </port>
+ </client>
+ <client name="Starship/Matisse HD Audio Controller Analog Stereo Monitor">
+  <port type="out" name="monitor_FL"/>
+  <port type="out" name="monitor_FR"/>
+ </client>
+ <client name="GA104 High Definition Audio Controller Digital Stereo (HDMI 2)">
+  <port type="in" name="playback_FL"/>
+  <port type="in" name="playback_FR"/>
+ </client>
+ <client name="ScreenshareVolume Audio/Sink sink Monitor">
+  <port type="out" name="monitor_FL">
+   <connect port="input_FL" client="MicAndScreenshare source"/>
+  </port>
+  <port type="out" name="monitor_FR">
+   <connect port="input_FR" client="MicAndScreenshare source"/>
+  </port>
+ </client>
+ <client name="Microphone source Monitor">
+  <port type="out" name="monitor_FL"/>
+  <port type="out" name="monitor_FR"/>
+ </client>
+ <client name="Scarlett Solo USB Analog Stereo Monitor">
+  <port type="out" name="monitor_FL"/>
+  <port type="out" name="monitor_FR"/>
+ </client>
+ <client name="WEBRTC VoiceEngine">
+  <port type="out" name="output_FL">
+   <connect port="playback_FL" client="VoiceChat Audio/Sink sink"/>
+  </port>
+  <port type="out" name="output_FR">
+   <connect port="playback_FR" client="VoiceChat Audio/Sink sink"/>
+  </port>
+  <port type="in" name="input_FL">
+   <connect port="capture_FL" client="MicAndScreenshare source"/>
+  </port>
+  <port type="in" name="input_FR">
+   <connect port="capture_FR" client="MicAndScreenshare source"/>
+  </port>
+ </client>
+ <client name="Firefox">
+  <port type="out" name="output_FL">
+   <connect port="playback_FL" client="Master Audio/Sink sink"/>
+  </port>
+  <port type="out" name="output_FR">
+   <connect port="playback_FR" client="Master Audio/Sink sink"/>
+  </port>
+ </client>
+ <client name="GA104 High Definition Audio Controller Digital Stereo (HDMI 2) Monitor">
+  <port type="out" name="monitor_FL"/>
+  <port type="out" name="monitor_FR"/>
+ </client>
+ <client name="ScreenshareVolume Audio/Sink sink">
+  <port type="in" name="playback_FL">
+   <connect port="monitor_FL" client="Screenshare Audio/Sink sink Monitor"/>
+  </port>
+  <port type="in" name="playback_FR">
+   <connect port="monitor_FR" client="Screenshare Audio/Sink sink Monitor"/>
+  </port>
+ </client>
+ <client name="Microphone source">
+  <port type="out" name="capture_FL">
+   <connect port="input_FL" client="MicAndScreenshare source"/>
+  </port>
+  <port type="out" name="capture_FR">
+   <connect port="input_FR" client="MicAndScreenshare source"/>
+  </port>
+  <port type="in" name="input_FL">
+   <connect port="capture_FL" client="Scarlett Solo USB Analog Stereo"/>
+   <connect port="capture_FR" client="Scarlett Solo USB Analog Stereo"/>
+  </port>
+  <port type="in" name="input_FR">
+   <connect port="capture_FR" client="Scarlett Solo USB Analog Stereo"/>
+   <connect port="capture_FL" client="Scarlett Solo USB Analog Stereo"/>
+  </port>
+ </client>
+ <client name="VoiceChat Audio/Sink sink">
+  <port type="in" name="playback_FL">
+   <connect port="output_FL" client="WEBRTC VoiceEngine"/>
+  </port>
+  <port type="in" name="playback_FR">
+   <connect port="output_FR" client="WEBRTC VoiceEngine"/>
+  </port>
+ </client>
+ <client name="Master Audio/Sink sink">
+  <port type="in" name="playback_FL">
+   <connect port="output_FL" client="Firefox"/>
+   <connect port="monitor_FL" client="Screenshare Audio/Sink sink Monitor"/>
+   <connect port="monitor_FL" client="VoiceChat Audio/Sink sink Monitor"/>
+  </port>
+  <port type="in" name="playback_FR">
+   <connect port="output_FR" client="Firefox"/>
+   <connect port="monitor_FR" client="Screenshare Audio/Sink sink Monitor"/>
+   <connect port="monitor_FR" client="VoiceChat Audio/Sink sink Monitor"/>
+  </port>
+ </client>
+ <client name="MicAndScreenshare source">
+  <port type="out" name="capture_FL">
+   <connect port="input_FL" client="WEBRTC VoiceEngine"/>
+  </port>
+  <port type="out" name="capture_FR">
+   <connect port="input_FR" client="WEBRTC VoiceEngine"/>
+  </port>
+  <port type="in" name="input_FL">
+   <connect port="capture_FL" client="Microphone source"/>
+   <connect port="monitor_FL" client="ScreenshareVolume Audio/Sink sink Monitor"/>
+  </port>
+  <port type="in" name="input_FR">
+   <connect port="capture_FR" client="Microphone source"/>
+   <connect port="monitor_FR" client="ScreenshareVolume Audio/Sink sink Monitor"/>
+  </port>
+ </client>
+ <client name="Screenshare Audio/Sink sink Monitor">
+  <port type="out" name="monitor_FL">
+   <connect port="playback_FL" client="ScreenshareVolume Audio/Sink sink"/>
+   <connect port="playback_FL" client="Master Audio/Sink sink"/>
+  </port>
+  <port type="out" name="monitor_FR">
+   <connect port="playback_FR" client="ScreenshareVolume Audio/Sink sink"/>
+   <connect port="playback_FR" client="Master Audio/Sink sink"/>
+  </port>
+ </client>
+ <client name="Screenshare Audio/Sink sink">
+  <port type="in" name="playback_FL"/>
+  <port type="in" name="playback_FR"/>
+ </client>
+ <client name="WEBRTC VoiceEngine Monitor">
+  <port type="out" name="monitor_FL"/>
+  <port type="out" name="monitor_FR"/>
+ </client>
+ <client name="MicAndScreenshare source Monitor">
+  <port type="out" name="monitor_FL"/>
+  <port type="out" name="monitor_FR"/>
+ </client>
+ <client name="Master Audio/Sink sink Monitor">
+  <port type="out" name="monitor_FL">
+   <connect port="playback_FL" client="Starship/Matisse HD Audio Controller Analog Stereo"/>
+  </port>
+  <port type="out" name="monitor_FR">
+   <connect port="playback_FR" client="Starship/Matisse HD Audio Controller Analog Stereo"/>
+  </port>
+ </client>
+ <client name="Midi-Bridge">
+  <port type="out" name="Midi Through:(capture_0) Midi Through Port-0"/>
+  <port type="in" name="Midi Through:(playback_0) Midi Through Port-0"/>
+ </client>
+ <client name="Scarlett Solo USB Analog Stereo">
+  <port type="out" name="capture_FL">
+   <connect port="input_FL" client="Microphone source"/>
+   <connect port="input_FR" client="Microphone source"/>
+  </port>
+  <port type="out" name="capture_FR">
+   <connect port="input_FR" client="Microphone source"/>
+   <connect port="input_FL" client="Microphone source"/>
+  </port>
+  <port type="in" name="playback_FL"/>
+  <port type="in" name="playback_FR"/>
+ </client>
+</session>
+
