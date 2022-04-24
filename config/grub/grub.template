@@ -17,4 +17,4 @@ GRUB_TERMINAL_INPUT=console
 
 GRUB_GFXMODE="1920x1080x32"
 GRUB_GFXPAYLOAD_LINUX=keep
-GRUB_THEME="/home/jackson/.config/grub/monstro_v2/theme.txt"
+GRUB_THEME="{CUR}/monstro_v2/theme.txt"
