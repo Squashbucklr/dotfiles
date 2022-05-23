@@ -1,5 +1,3 @@
-set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-set autoindent
 set colorcolumn=81
 set number
 set wildmenu
@@ -7,3 +5,10 @@ set ignorecase
 set scrolloff=5
 set title
 syntax on
+
+" INDENTATION
+set autoindent
+"   ts        sw           sts  
+set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+" overrides
+autocmd FileType elm :setlocal sw=2 ts=2 sts=2
