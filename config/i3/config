@@ -151,7 +151,10 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Shift+e exec i3-nagbar -m "Scary buttons" -B "Exit i3" "i3-msg exit" -B "Reboot" "systemctl reboot" -B "Shut Down" "systemctl poweroff"
+bindsym $mod+Shift+e exec i3-nagbar -m "Scary buttons" \
+-B "Sleep" "i3lock -c 000000 && sleep 1 && xset s activate" \
+-B "Exit i3" "i3-msg exit" \
+-B "Reboot" "systemctl reboot" -B "Shut Down" "systemctl poweroff"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -217,9 +220,10 @@ client.background       $c_dark
 ################################################################################
 
 
-bindsym --release $mod+Shift+s exec scrot -s -b -f -e 'xclip -selection clipboard -t image/png -i $f' -F "/home/jackson/pictures/screenshots/scrot/screenshot-%Y-%m-%d-%H:%M:%S.png"
+bindsym --release $mod+Shift+s exec scrot -s -b -f -e 'xclip -selection clipboard -t image/png -i $f' -F "/home/jackson/Pictures/screenshots/scrot/screenshot-%Y-%m-%d-%H:%M:%S.png"
 
-bindsym --release $mod+l exec light-locker-command -l
+# bindsym --release $mod+l exec light-locker-command -l
+bindsym --release $mod+z exec i3lock -c 000000 && sleep 1 && xset s activate
 
 bindsym $mod+Shift+greater move workspace to output right
 bindsym $mod+Shift+less move workspace to output left
