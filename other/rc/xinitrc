@@ -34,4 +34,5 @@ fi
 
 ~/.config/pipewire/pactl.sh
 unclutter --timeout 2 &
+udiskie &
 exec i3 -V
